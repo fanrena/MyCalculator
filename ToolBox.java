@@ -1,8 +1,8 @@
-//*ĞÅ¼Æ1702 Ñ§ºÅ£º2017005587 
-// * ÎäÆôî£
+
+// * å—æ¬§ä»¥å—
 // * 2019.05.25
-// * °æ±¾1.00.00
-// * Ã»ÓĞÏÂÒ»¸ö°æ±¾ÁË´ó¸Å
+// * ç‰ˆæœ¬1.00.00
+// * æ²¡æœ‰ä¸‹ä¸€ä¸ªç‰ˆæœ¬äº†å¤§æ¦‚
 // * .....................................................
 // *.....................................................
 // *.....................................................
@@ -40,30 +40,30 @@ package MyCalculator;
 //import javax.swing.JFrame;
 
 public class ToolBox {
-	public static String final_result="null";//×Ö·û´®»¯µÄ×îÖÕ½á¹û
-	public static double result=0;//½á¹û
+	public static String final_result="null";//å­—ç¬¦ä¸²åŒ–çš„æœ€ç»ˆç»“æœ
+	public static double result=0;//ç»“æœ
 	public static double  temp=0;//+-
 	public static double temp_1=1;//*/
 	public static double temp_2=1;//no use
 	private static int se_counnt=0;//no use
 	public static int ch_count=0;//no use
-	public static int con=0;//Ğ¡ÊıµãĞ¡Êı²¿·Ö´¦Àí
-	public static int statue=1;//Ğ¡ÊıµãÕûÊı²¿·Ö´¦Àí
-	public static String syb_1="+";//¼ÇÂ¼ÉÏÒ»¸ö+-ºÅ
-	public static String syb_2="*";//¼ÇÂ¼ÉÏÒ»¸ö*/ºÅ
+	public static int con=0;//å°æ•°ç‚¹å°æ•°éƒ¨åˆ†å¤„ç†
+	public static int statue=1;//å°æ•°ç‚¹æ•´æ•°éƒ¨åˆ†å¤„ç†
+	public static String syb_1="+";//è®°å½•ä¸Šä¸€ä¸ª+-å·
+	public static String syb_2="*";//è®°å½•ä¸Šä¸€ä¸ª*/å·
 	public static String ch="null";
-	public static String origin="null";//Ô­Ê¼×Ö·û´®£¨Ê½×Ó£©£¬»á±ä»¯Ò»²½Ò»²½ÍÑµôÀ¨ºÅ
-	public static String replace="null";//Ìæ»»Ô­Ê½ÖĞµÄÀ¨ºÅ£¬´ÓÄÚÍùÍâ
-	public static void calculate(String ch_temp)//¼ÆËã²¿·Ö£¬ÎŞÀ¨ºÅÏŞ¶¨¡£
+	public static String origin="null";//åŸå§‹å­—ç¬¦ä¸²ï¼ˆå¼å­ï¼‰ï¼Œä¼šå˜åŒ–ä¸€æ­¥ä¸€æ­¥è„±æ‰æ‹¬å·
+	public static String replace="null";//æ›¿æ¢åŸå¼ä¸­çš„æ‹¬å·ï¼Œä»å†…å¾€å¤–
+	public static void calculate(String ch_temp)//è®¡ç®—éƒ¨åˆ†ï¼Œæ— æ‹¬å·é™å®šã€‚
 	{
 		ch=ch_temp;
 		switch(ch)
 		{
 		/*
-		 * µ¥Ä¿ÔËËã·û¸ñÊ½{result=µ¥Ä¿ÔËËãÄÚÈİ;con=0;statue=0;break;}
-		 * Ë«Ä¿ÔËËã·û¸ñÊ½{temp_1=Ë«Ä¿ÔËËãÄÚÈİ;temp=¡£¡£¡£»¹ÊÇ²ÎÕÕÏÂÃæµÄ°É£¬temp_1ÊÇºÍ* /Í¬ÓÅÏÈ¼¶
-		 * tempºÍ+-Í¬ÓÅÏÈ¼¶£¬syb_2ÊÇ/*Í¬ÓÅÏÈ¼¶£¬syb_1ÊÇºÍ+-Í¬ÓÅÏÈ¼¶
-		 * ËÆºõÔÙÅª¸ötemp_2ºÍsyb_3¾ÍÄÜÈÃ^ÔÙ¸ßÒ»¸öÓÅÏÈ¼¶ÁË£¬²»¹ıÀÁµÃ¸ÄÁË
+		 * å•ç›®è¿ç®—ç¬¦æ ¼å¼{result=å•ç›®è¿ç®—å†…å®¹;con=0;statue=0;break;}
+		 * åŒç›®è¿ç®—ç¬¦æ ¼å¼{temp_1=åŒç›®è¿ç®—å†…å®¹;temp=ã€‚ã€‚ã€‚è¿˜æ˜¯å‚ç…§ä¸‹é¢çš„å§ï¼Œtemp_1æ˜¯å’Œ* /åŒä¼˜å…ˆçº§
+		 * tempå’Œ+-åŒä¼˜å…ˆçº§ï¼Œsyb_2æ˜¯/*åŒä¼˜å…ˆçº§ï¼Œsyb_1æ˜¯å’Œ+-åŒä¼˜å…ˆçº§
+		 * ä¼¼ä¹å†å¼„ä¸ªtemp_2å’Œsyb_3å°±èƒ½è®©^å†é«˜ä¸€ä¸ªä¼˜å…ˆçº§äº†ï¼Œä¸è¿‡æ‡’å¾—æ”¹äº†
 		 * 
 		 * 
 		 * 
@@ -93,18 +93,18 @@ public class ToolBox {
 		}
 		case("*"):{negetive();temp_1=mark(syb_2);syb_2="*";syb_1="+";se_counnt++;result=0;con=0;statue=1;break;}
 		case("/"):{negetive();temp_1=mark(syb_2);syb_2="/";syb_1="+";se_counnt++;result=0;con=0;statue=1;break;}
-		case("="):{result=mark(syb_2);negetive();temp=mark("+");syb_1="+";syb_2="*";se_counnt=0;result=0;temp_1=1;result=temp;statue=1;con=0;break;}//ÆäÊµ¾ÍÊÇ¸ö+
+		case("="):{result=mark(syb_2);negetive();temp=mark("+");syb_1="+";syb_2="*";se_counnt=0;result=0;temp_1=1;result=temp;statue=1;con=0;break;}//å…¶å®å°±æ˜¯ä¸ª+
 		case("c"):{result=Math.cos(result);con=0;statue=1;break;}//cos
 		case("s"):{result=Math.sin(result);con=0;statue=1;break;}//sin
 		case("t"):{result=Math.abs(result);con=0;statue=1;break;}//tan
-		case("^"):{temp_1=mark(syb_2);syb_2="^";result=0;con=0;statue=1;break;}//pow£¨a£¬b£©£¬ÓÅÏÈ¶ÈÓë³Ë³ıÍ¬¼¶£¬ÀÁµÃ¸ÄÁË
-		//case("C"):{initialize();final_result="null";break;}//¹éÁã
-		case("¡À"):{result=0-result;con=0;statue=0;break;}
+		case("^"):{temp_1=mark(syb_2);syb_2="^";result=0;con=0;statue=1;break;}//powï¼ˆaï¼Œbï¼‰ï¼Œä¼˜å…ˆåº¦ä¸ä¹˜é™¤åŒçº§ï¼Œæ‡’å¾—æ”¹äº†
+		//case("C"):{initialize();final_result="null";break;}//å½’é›¶
+		case("Â±"):{result=0-result;con=0;statue=0;break;}
 		case("f"):{result=1/result;con=0;statue=0;break;}
 		case("m"):{negetive();temp_1=mark(syb_2);syb_2="m";se_counnt++;result=0;con=0;statue=1;break;}
 		}
 	}
-	private static void show() {System.out.println("runned");}//¼ì²éÓÃÃ»ÓÃµ½µÄº¯Êı¡£¡£
+	private static void show() {System.out.println("runned");}//æ£€æŸ¥ç”¨æ²¡ç”¨åˆ°çš„å‡½æ•°ã€‚ã€‚
 	public static void negetive()
 	{
 		//System.out.println("result"+result+syb_1);
@@ -112,7 +112,7 @@ public class ToolBox {
 			result=0-result;
 		//System.out.println("Late/result"+result);
 	}
-	public static void initialize()//¼ÆËãÆ÷³õÊ¼»¯
+	public static void initialize()//è®¡ç®—å™¨åˆå§‹åŒ–
 	{
 		result=0;
 		temp=0;
@@ -129,7 +129,7 @@ public class ToolBox {
 	{
 		final_result="null";
 	}
-	public static double mark(String a)//½øĞĞÉÏÒ»¸öÔËËã·ûµÄÔËËã£¬a+b+£¬Ëãa+bµÄÖµÖ®ÀàµÄ
+	public static double mark(String a)//è¿›è¡Œä¸Šä¸€ä¸ªè¿ç®—ç¬¦çš„è¿ç®—ï¼Œa+b+ï¼Œç®—a+bçš„å€¼ä¹‹ç±»çš„
 	{
 		double noname=0;
 		//negetive();
@@ -144,7 +144,7 @@ public class ToolBox {
 		default:{System.out.println(a);}
 		}
 		//System.out.println("noname="+noname);
-		return noname;//½á¹û
+		return noname;//ç»“æœ
 	}
 	public static void String_Handler(String a)
 	{
@@ -163,7 +163,7 @@ public class ToolBox {
 				b_total++;
 		}
 		if(total!=b_total) {
-			//JDialog error=new JDialog(error, "ÊäÈë³É¶ÔµÄÀ¨ºÅ°¡kora");
+			//JDialog error=new JDialog(error, "è¾“å…¥æˆå¯¹çš„æ‹¬å·å•Škora");
 			String_Saver.switcher("C");
 		}
 		//System.out.println("total="+total);
